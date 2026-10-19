@@ -1,0 +1,116 @@
+//Criar pasta, ao inicializar repositório
+ git init
+
+//Verificar o estado dos arquivos
+ git status
+
+//adicionar um arquivo específico ao stage 
+ git add index.html (Staged)
+
+//adicionar tudo de uma vez
+ git add .
+
+//gravar o snapshot no histórico local
+ git commit -m "feat: adiciona pagina inicial"
+
+//site para apoio
+ conventionalcommits.org
+
+//criar o arquivo .gitignore na raiz do projeto
+ touch .gitignoref
+ *Crie um arquivo nomeado gitignore
+
+//conferir que os arquivos ignorados não aparecem
+ git status
+
+//exemplo de conteúdo do .gitignore:
+ *.log (Qualquer arquivo .log)
+ node_modules/
+ .env
+ .vscode/
+
+//log compacto, um commit por linha
+ git log --oneline
+
+//log visual com gráfico de branches
+ git log --oneline --graph --all --decorate
+
+//ver mudanças ainda não staged
+ git diff
+
+//ver oque está pronto para commit
+ git diff --staged
+
+//Desfazer edição no Working Directory
+ git restore arquivo
+ ex: git restore index.html
+
+//Remover arquivo do Stage
+ git restore --staged arquivo
+ ex: git restore --staged index.html
+ ex: git restore --source-<hash/branch> index.html
+
+//Corrigir mensagem do último commit
+ git commit --amend -m "..."
+ ex: git commit --amend -m "feat(auth): Texto corrigido"
+
+//Adicionar arquivo esquecido ao último commit
+ git add arq && git commit --amend --no-edit
+ ex: git add arquivo_esquecido.js
+     git commit --amend --no-edit
+
+//Desfazer um commit com segurança
+ git revert <hash>
+ ex: git log --oneline
+     git revert <hash> (Abre o editor da mensagem)
+     git revert <hash> --no-edit (Não abre o editor)
+
+ ex: git revert -n <hash1>...<hash2>
+
+//Guardar e recuperar trabalho temporariamente
+ git stash / git stash pop
+
+//Comando de conexão com o servidor
+ git remote add origen
+ git@github.com:usuario/repositorio.git
+
+//Gerar um par de chaves SSH seguro
+ ssh-keygen -t -C "seu.email@provedor.com"
+
+//Adicionar a chave ao agente SSH local
+ eval "$(ssh-agent -s)"
+ ssh-add ~/.ssh/id_ed25519
+
+//Exibir a chave PÚBLICA para copiar e colar
+ cat ~/.ssh/id_ed255519.pub
+
+//Testar a conexão com o servidor
+ ssh -T git@github.com
+
+//Vincular o repositório local ao GitHub
+ git remote adad origin git@github.com:usr/repo.git
+
+//Verificar remotos configurados
+ git remote -v
+
+//Primeiro envio (Define o mapeamento upstream)
+ git push -u origin main
+
+//Próximos envios (após mapeamento estabelecido)
+
+//Baixar e integrar alteraões automáticamente
+ git pull origin main
+
+ //Baixar os dados sem integrar (só inspecionar)
+ git fetch origin
+
+//Clonar via SSH (cria uma pasta com o nome do repositório)
+ git clone git@github.com:usr/repo.git
+
+//Clonar em uma pasta com nome personalizado
+ git clone git@github.com:usr/repo.git minha-pasta
+
+
+
+
+
