@@ -97,8 +97,9 @@
  git push -u origin main
 
 //Próximos envios (após mapeamento estabelecido)
+ git push
 
-//Baixar e integrar alteraões automáticamente
+//Baixar e integrar alterações na maquina automáticamente
  git pull origin main
 
  //Baixar os dados sem integrar (só inspecionar)
@@ -109,6 +110,32 @@
 
 //Clonar em uma pasta com nome personalizado
  git clone git@github.com:usr/repo.git minha-pasta
+
+//Criar e mudar para uma nova Branch
+ git switch -c tipo/nome-branch
+
+//Publicar a branch no GitHub
+ git push -u origin tipo/nome-branch
+
+//Verifica a Branch atual
+ git branch
+
+//Voltar para a branch principal
+ git switch main
+
+//Integrar a branch desejada
+ git merge tipo/nome-branch
+
+//Enviar as alterações para o GitHub
+ git push
+
+//Reorganizar a branch atual sobre a main atualizada
+ git switch feature/login
+ git rebase main
+
+//Rebase interativo: Organizar, juntar ou renomear
+//Commits locais
+ git rebase -i HEAD~4
 
 
 
